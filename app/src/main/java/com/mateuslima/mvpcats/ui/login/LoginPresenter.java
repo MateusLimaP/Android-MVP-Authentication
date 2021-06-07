@@ -7,12 +7,13 @@ import javax.inject.Inject;
 public class LoginPresenter implements LoginContract.Presenter, LoginContract.Interactor.CheckCredentials{
 
     private LoginContract.View view;
-    private LoginContract.Interactor interactor;
+    private LoginInteractor interactor;
 
     @Inject
-    public LoginPresenter(LoginContract.View view) {
+    public LoginPresenter(LoginContract.View view, LoginInteractor loginInteractor) {
         this.view = view;
-        interactor = new LoginInteractor();
+        this.interactor = loginInteractor;
+
     }
 
     @Override

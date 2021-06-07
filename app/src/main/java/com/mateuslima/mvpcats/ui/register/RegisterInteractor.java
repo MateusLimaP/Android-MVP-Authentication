@@ -7,10 +7,16 @@ import com.mateuslima.mvpcats.data.db.UserDatabase;
 import com.mateuslima.mvpcats.data.db.dao.UserDao;
 import com.mateuslima.mvpcats.data.db.model.User;
 
+import javax.inject.Inject;
+
 public class RegisterInteractor implements RegisterContract.Interactor {
 
     private Context context;
     private UserDao userDao;
+
+    @Inject
+    public RegisterInteractor() {
+    }
 
     @Override
     public void createAccount(CreateAccount createAccount, String name, String email, String password) {

@@ -6,12 +6,17 @@ import com.mateuslima.mvpcats.data.db.UserDatabase;
 import com.mateuslima.mvpcats.data.db.dao.UserDao;
 import com.mateuslima.mvpcats.data.db.model.User;
 
+import javax.inject.Inject;
+
 
 public class LoginInteractor implements LoginContract.Interactor {
 
     private Context context;
     private UserDao userDao;
 
+    @Inject
+    public LoginInteractor() {
+    }
 
     @Override
     public void checkCredentials(CheckCredentials checkCredentials, String email, String password) {

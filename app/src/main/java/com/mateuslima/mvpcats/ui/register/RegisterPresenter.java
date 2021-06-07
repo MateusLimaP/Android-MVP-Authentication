@@ -5,12 +5,12 @@ import javax.inject.Inject;
 public class RegisterPresenter implements RegisterContract.Presenter, RegisterContract.Interactor.CreateAccount {
 
     private RegisterContract.View view;
-    private RegisterContract.Interactor interactor;
+    private RegisterInteractor interactor;
 
     @Inject
-    public RegisterPresenter(RegisterContract.View view) {
+    public RegisterPresenter(RegisterContract.View view, RegisterInteractor interactor) {
         this.view = view;
-        interactor = new RegisterInteractor();
+        this.interactor = interactor;
     }
 
     @Override
